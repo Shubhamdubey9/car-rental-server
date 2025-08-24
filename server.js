@@ -15,10 +15,14 @@ const app = express();
 
 
 const corsOption = {
-  origin:  "http://localhost:5173",
+  origin: [
+    "http://localhost:5173", // for local dev
+    "https://car-rental-system-omega.vercel.app", // your Vercel frontend
+  ],
   credentials: true,
 };
 app.use(cors(corsOption));
+
 app.use(express.json());
 
 
